@@ -2,4 +2,4 @@
 
 Work in progress.
 
-slime 的代码正在写。如果想合作开发可以联系我。
+The slime integration is under active development. Please contact me if you are interested in collaborating.

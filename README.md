@@ -4,7 +4,7 @@
 
 - verl PR: work in progress.
 - slime PR: work in progress.
-- slime 的代码正在写。如果想合作开发可以联系我。
+- The slime integration is under active development. It is intended to bring the same MTP-RL training workflow to the slime stack, including RL-style MTP loss support and runnable training scripts. Please contact me if you are interested in collaborating.
 
 ## Main Changes in `verl`
 
