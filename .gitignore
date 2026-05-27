@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environments and secrets
+.env
+.venv/
+venv/
+/ENV/
+
+# Local editor/agent state
+**/.claude/
+**/.gemini/
+**/.vscode/
+**/.idea/
+
+# Training outputs and large artifacts
+**/checkpoints/
+**/outputs/
+**/wandb/
+**/*.ckpt
+**/*.pt
+**/*.tar.gz
+**/*.parquet
