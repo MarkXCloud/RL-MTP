@@ -16,6 +16,8 @@ This project extends `verl` with experimental support for joint RL training of M
 
 The main changes are concentrated in the Megatron/MCore training path:
 
+For instructions on using MTP in verl, please refer to the official verl documentation: [Guide to Using MTP in SFT/RL Training and Inference](https://verl.readthedocs.io/en/latest/advance/mtp.html).
+
 - `actor_rollout_ref.model.mtp.mtp_loss_type`
   - `ce` keeps the original Megatron MTP loss, namely the token-level cross-entropy loss from the MTP heads.
   - `rl` enables the added RL loss path, where MTP heads compute the same policy-gradient style loss as the main model head.
