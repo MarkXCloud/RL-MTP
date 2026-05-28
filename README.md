@@ -1,5 +1,9 @@
 # Joint Training of Multi-Token Prediction in Reinforcement Learning via Optimal Coefficient Calibration
 
+[![arXiv](https://img.shields.io/badge/arXiv%20paper-2605.28184-b31b1b.svg)](https://arxiv.org/abs/2605.28184)&nbsp;
+
+This is the official implementation of the paper [Joint Training of Multi-Token Prediction in Reinforcement Learning via Optimal Coefficient Calibration](https://arxiv.org/abs/2605.28184).
+
 ## Status
 
 - verl PR: work in progress.
