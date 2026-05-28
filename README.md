@@ -4,6 +4,18 @@
 
 This is the official implementation of the paper [Joint Training of Multi-Token Prediction in Reinforcement Learning via Optimal Coefficient Calibration](https://arxiv.org/abs/2605.28184).
 
+## What happend to MTP in RL
+
+Naively combining MTP with RL can change the training dynamics in a way that is not captured by the MTP loss alone. The MiMo-7B traces below illustrate the degradation that motivates our analysis and coefficient calibration.
+
+![What happend to MTP in RL](assets/mimo-7b-mtp.png)
+
+## Method Overview
+
+The main figure summarizes our transition from detached MTP training to joint MTP-RL training. In addition to the CE and policy-loss variants, our Optimal Coefficient Calibration (OCC) adaptively scales the MTP update so that the auxiliary MTP objective supports the RL objective instead of perturbing it.
+
+![Overview of Optimal Coefficient Calibration](assets/main.png)
+
 ## Status
 
 - verl PR: work in progress.
