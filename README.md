@@ -6,13 +6,15 @@ This is the official implementation of the paper [Joint Training of Multi-Token 
 
 ## What happend to MTP in RL
 
-Naively combining MTP with RL can change the training dynamics in a way that is not captured by the MTP loss alone. The MiMo-7B traces below illustrate the degradation that motivates our analysis and coefficient calibration.
+Reinforcement Learning from Verifiable Rewards (RLVR) has become a standard recipe for improving the reasoning capability of large language models, while Multi-Token Prediction (MTP) is widely used during pretraining. Combining them is natural, but in current RL practice MTP gradients are often detached because direct joint training can degrade performance. This phenomenon can also be found in the verl MTP guide: [Guide to Using MTP in SFT/RL Training and Inference](https://verl.readthedocs.io/en/latest/advance/mtp.html).
+
+The MiMo-7B traces below illustrate the degradation that motivates our analysis. We revisit this failure from an optimization perspective and show that the per-step effect of MTP on the RL objective can be decomposed into a first-order correlation term and a second-order perturbation penalty.
 
 ![What happend to MTP in RL](assets/mimo-7b-mtp.png)
 
 ## Method Overview
 
-The main figure summarizes our transition from detached MTP training to joint MTP-RL training. In addition to the CE and policy-loss variants, our Optimal Coefficient Calibration (OCC) adaptively scales the MTP update so that the auxiliary MTP objective supports the RL objective instead of perturbing it.
+The main figure summarizes our transition from detached MTP training to joint MTP-RL training. The decomposition unifies three MTP training regimes: Detach, Cross-Entropy loss, and Policy loss, explaining why each succeeds or fails. Although policy loss aligns better with the RL objective, its correlation term can decay while the quadratic penalty persists. Guided by this analysis, Optimal Coefficient Calibration (OCC) adaptively tracks the coefficient online through a log-probability proxy, so that the MTP update supports the RL objective instead of perturbing it.
 
 ![Overview of Optimal Coefficient Calibration](assets/main.png)
 
